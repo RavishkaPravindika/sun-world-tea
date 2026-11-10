@@ -23,29 +23,29 @@ export default function CTASection({
 }: CTASectionProps) {
   const bgStyle = {
     green: {
-      background: 'linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-secondary) 60%, var(--color-brand-accent) 100%)',
+      background: 'var(--color-brand-forest)',
     },
     dark: {
-      background: 'linear-gradient(135deg, #0D1A08 0%, #1E2F17 100%)',
+      background: 'var(--color-brand-forest)',
     },
     ivory: {
       background: 'var(--color-bg-secondary)',
     },
   }[variant];
 
-  const isLight = variant === 'green' || variant === 'dark';
+  const isDarkSurface = variant !== 'ivory';
 
   return (
     <section className="relative overflow-hidden py-20 px-4 sm:px-6" style={bgStyle}>
       {/* Decorative elements */}
       <div
         className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.6) 0%, transparent 70%)', transform: 'translate(30%, -30%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(81,227,11,0.35) 0%, transparent 70%)', transform: 'translate(30%, -30%)' }}
         aria-hidden="true"
       />
       <div
         className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10 pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(125,184,90,0.5) 0%, transparent 70%)', transform: 'translate(-30%, 30%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(58,178,12,0.28) 0%, transparent 70%)', transform: 'translate(-30%, 30%)' }}
         aria-hidden="true"
       />
 
@@ -54,21 +54,21 @@ export default function CTASection({
           {eyebrow && (
             <p
               className="text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: isLight ? 'rgba(201, 168, 76, 0.9)' : 'var(--color-brand-gold)' }}
+              style={{ color: isDarkSurface ? 'var(--color-brand-primary)' : 'var(--color-text-accent)' }}
             >
               {eyebrow}
             </p>
           )}
           <h2
             className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-5"
-            style={{ color: isLight ? '#FAF7F2' : 'var(--color-text-primary)' }}
+            style={{ color: isDarkSurface ? 'var(--color-text-on-dark)' : 'var(--color-text-primary)' }}
           >
             {title}
           </h2>
           {subtitle && (
             <p
               className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto"
-              style={{ color: isLight ? 'rgba(250, 247, 242, 0.78)' : 'var(--color-text-muted)' }}
+              style={{ color: isDarkSurface ? 'rgba(234, 243, 229, 0.82)' : 'var(--color-text-muted)' }}
             >
               {subtitle}
             </p>
@@ -79,8 +79,8 @@ export default function CTASection({
                 href={primaryCTA.href}
                 className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-sm font-medium text-sm tracking-wide transition-all duration-250"
                 style={{
-                  background: isLight ? '#FAF7F2' : 'var(--color-brand-primary)',
-                  color: isLight ? 'var(--color-brand-primary)' : '#FAF7F2',
+                  background: 'var(--color-brand-primary)',
+                  color: '#14210F',
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
@@ -100,17 +100,17 @@ export default function CTASection({
                 href={secondaryCTA.href}
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-sm font-medium text-sm tracking-wide transition-all duration-250 border"
                 style={{
-                  borderColor: isLight ? 'rgba(250, 247, 242, 0.5)' : 'var(--color-border-gold)',
-                  color: isLight ? 'rgba(250, 247, 242, 0.9)' : 'var(--color-brand-gold)',
+                  borderColor: isDarkSurface ? 'rgba(234, 243, 229, 0.5)' : 'var(--color-border-strong)',
+                  color: isDarkSurface ? 'var(--color-text-on-dark)' : 'var(--color-text-accent)',
                   background: 'transparent',
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = isLight ? '#FAF7F2' : 'var(--color-brand-gold)';
-                  (e.currentTarget as HTMLElement).style.background = isLight ? 'rgba(250,247,242,0.08)' : 'rgba(201,168,76,0.08)';
+                  (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-brand-primary)';
+                  (e.currentTarget as HTMLElement).style.background = 'var(--color-brand-primary-subtle)';
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = isLight ? 'rgba(250, 247, 242, 0.5)' : 'var(--color-border-gold)';
+                  (e.currentTarget as HTMLElement).style.borderColor = isDarkSurface ? 'rgba(234, 243, 229, 0.5)' : 'var(--color-border-strong)';
                   (e.currentTarget as HTMLElement).style.background = 'transparent';
                   (e.currentTarget as HTMLElement).style.transform = '';
                 }}
@@ -124,4 +124,3 @@ export default function CTASection({
     </section>
   );
 }
-

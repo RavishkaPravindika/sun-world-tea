@@ -32,13 +32,12 @@ export const galleryCategories: { id: GalleryCategory; label: string }[] = [
 /**
  * Gallery image data.
  * Replace the `src` values with actual image paths/URLs when real photography is available.
- * Images are sourced from Unsplash for demonstration. Replace with branded photography.
+ * Images are placeholders. Replace with branded photography.
  */
 export const galleryImages: GalleryImage[] = [
   {
     id: '1',
-    // Tea leaves macro
-    src: 'https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800&auto=format&fit=crop',
     alt: 'Fresh Ceylon tea leaves close-up macro photography',
     category: 'tea-leaves',
     width: 800,
@@ -46,8 +45,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '2',
-    // Tea preparation — tea being poured / brewed
-    src: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=800&auto=format&fit=crop',
     alt: 'Elegant tea preparation with premium loose leaf tea',
     category: 'tea-preparation',
     width: 800,
@@ -55,8 +53,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '3',
-    // Cup of tea
-    src: 'https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1563911302283-d2bc129e7570?q=80&w=800&auto=format&fit=crop',
     alt: 'Premium Ceylon tea in a beautiful porcelain cup',
     category: 'tea-cups',
     width: 800,
@@ -64,8 +61,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '4',
-    // Tea plantation
-    src: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1491497895121-1334fc14d8c9?q=80&w=800&auto=format&fit=crop',
     alt: 'Lush tea plantation landscape with rows of tea bushes',
     category: 'nature',
     width: 800,
@@ -73,8 +69,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '5',
-    // Green tea leaves on surface
-    src: 'https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=800&auto=format&fit=crop',
     alt: 'Fresh green tea leaves arranged on natural surface',
     category: 'tea-leaves',
     width: 800,
@@ -82,8 +77,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '6',
-    // Dried black tea leaves
-    src: 'https://images.unsplash.com/photo-1561158765-bad083dfc04b?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=800&auto=format&fit=crop',
     alt: 'Close-up of dried premium black tea leaves',
     category: 'tea-leaves',
     width: 800,
@@ -91,8 +85,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '7',
-    // Steaming cup of tea
-    src: 'https://images.unsplash.com/photo-1527481138388-31827a7c94d5?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=800&auto=format&fit=crop',
     alt: 'Warm cup of tea with steam rising — peaceful tea moment',
     category: 'tea-cups',
     width: 800,
@@ -100,8 +93,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '8',
-    // Tea being poured
-    src: 'https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=800&auto=format&fit=crop',
     alt: 'Pouring freshly brewed Ceylon tea — amber liquor in motion',
     category: 'tea-preparation',
     width: 800,
@@ -109,8 +101,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '9',
-    // Nature / green hills (tea region)
-    src: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1546554137-f86b9593a222?q=80&w=800&auto=format&fit=crop',
     alt: 'Lush green tea garden in misty morning light',
     category: 'nature',
     width: 800,
@@ -118,8 +109,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '10',
-    // Glass of tea / infusion
-    src: 'https://images.unsplash.com/photo-1547825407-2d060104b7f8?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800&auto=format&fit=crop',
     alt: 'Clear glass of freshly brewed tea showing amber colour',
     category: 'tea-cups',
     width: 800,
@@ -127,8 +117,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '11',
-    // Tea packaging / tin
-    src: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1563911302283-d2bc129e7570?q=80&w=800&auto=format&fit=crop',
     alt: 'Elegantly packaged premium Ceylon loose leaf tea tin',
     category: 'tea-packaging',
     width: 800,
@@ -136,8 +125,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '12',
-    // Tea preparation tools / arrangement
-    src: 'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=800&auto=format&fit=crop',
     alt: 'Tea leaves, teapot and accessories arranged for preparation',
     category: 'behind-the-scenes',
     width: 800,
@@ -145,8 +133,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '13',
-    // Another tea leaves shot
-    src: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=600&auto=format&fit=crop',
     alt: 'Dried whole-leaf tea displayed showing grade quality',
     category: 'tea-leaves',
     width: 600,
@@ -154,8 +141,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '14',
-    // Tea pot
-    src: 'https://images.unsplash.com/photo-1596908402935-f4a4b2e17ec1?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=800&auto=format&fit=crop',
     alt: 'Traditional ceramic teapot with freshly brewed Ceylon tea',
     category: 'tea-preparation',
     width: 800,
@@ -163,8 +149,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: '15',
-    // Tea packaging
-    src: 'https://images.unsplash.com/photo-1523920290228-4f321a939b4c?w=800&q=80',
+    src: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=800&auto=format&fit=crop',
     alt: 'Premium tea packaging presentation — craft and quality',
     category: 'tea-packaging',
     width: 800,

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Award, Leaf, Heart, Globe, Users, BookOpen } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -39,41 +40,50 @@ export default function AboutPage() {
       <section
         className="relative pt-32 pb-20 sm:pt-44 sm:pb-24 px-4 sm:px-6 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, var(--color-brand-primary) 0%, #1E3B0F 60%, var(--color-brand-secondary) 100%)',
+          background: 'var(--color-bg-tertiary)',
         }}
         aria-label="About Us hero"
       >
+        {/* Abstract leaf shape decoration */}
         <div
-          className="absolute inset-0 opacity-[0.08] pointer-events-none"
+          className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=60')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            background: 'var(--color-brand-accent)',
+            opacity: 0.15,
+            transform: 'translate(30%, -20%)',
           }}
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(135deg, rgba(13,26,8,0.7) 0%, rgba(21,34,16,0.5) 100%)' }}
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'var(--color-bg-veil)' }}
           aria-hidden="true"
         />
+
+        {/* Decorative border */}
+        <div
+          className="absolute inset-x-8 top-20 bottom-0 pointer-events-none hidden lg:block"
+          style={{ borderLeft: '1px solid var(--color-border)', borderRight: '1px solid var(--color-border)' }}
+          aria-hidden="true"
+        />
+
         <div className="relative max-w-4xl mx-auto text-center">
           <AnimatedSection>
             <p
               className="text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: 'rgba(201,168,76,0.9)' }}
+              style={{ color: 'var(--color-text-accent)' }}
             >
               Our Story
             </p>
             <h1
               className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-5"
-              style={{ color: '#FAF7F2' }}
+              style={{ color: 'var(--color-text-primary)' }}
             >
               About Sun World Tea
             </h1>
             <p
               className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
-              style={{ color: 'rgba(250,247,242,0.78)' }}
+              style={{ color: 'var(--color-text-muted)' }}
             >
               A newer tea brand built on genuine passion for quality, knowledge and a better tea experience. This is our story so far.
             </p>
@@ -112,17 +122,15 @@ export default function AboutPage() {
                 className="relative rounded-sm overflow-hidden"
                 style={{ minHeight: '400px' }}
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80')`,
-                  }}
-                  role="img"
-                  aria-label="Elegant tea preparation"
+                <Image
+                  src="https://images.unsplash.com/photo-1546554137-f86b9593a222?q=80&w=1000&auto=format&fit=crop"
+                  alt="Tea plantation background"
+                  fill
+                  className="object-cover"
                 />
                 <div
                   className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to top, rgba(13,26,8,0.6) 0%, transparent 60%)' }}
+                  style={{ background: 'linear-gradient(to top, rgba(16,27,19,0.6) 0%, transparent 60%)' }}
                   aria-hidden="true"
                 />
                 <div
@@ -133,10 +141,10 @@ export default function AboutPage() {
                     border: '1px solid var(--color-border-gold)',
                   }}
                 >
-                  <p className="font-serif text-sm italic leading-relaxed" style={{ color: '#FAF7F2' }}>
+                  <p className="font-serif text-sm italic leading-relaxed" style={{ color: 'var(--color-text-primary)' }}>
                     "Quality is not just about the grade. It is about the complete experience — from the appearance of the leaf to the character of the cup."
                   </p>
-                  <p className="text-xs mt-2 font-medium" style={{ color: 'var(--color-brand-gold)' }}>
+                  <p className="text-xs mt-2 font-medium" style={{ color: 'var(--color-text-accent)' }}>
                     — Sun World Tea
                   </p>
                 </div>
@@ -304,7 +312,7 @@ export default function AboutPage() {
                 <AnimatedSection key={value.title} delay={i * 0.07}>
                   <div className="hover-card hover-top-line flex flex-col items-center text-center p-5 sm:p-6 rounded-sm h-full">
                     <div className="value-icon mb-3">
-                      <Icon size={20} color="#FAF7F2" strokeWidth={1.5} />
+                      <Icon size={20} color="#14210F" strokeWidth={1.5} />
                     </div>
                     <h3
                       className="font-serif text-sm font-semibold mb-2"

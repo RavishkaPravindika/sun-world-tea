@@ -71,11 +71,11 @@ export default function Navbar() {
                 boxShadow: 'var(--glow-green)',
               }}
             >
-              <Leaf size={16} color="#FAF7F2" />
+              <Leaf size={16} color="#14210F" />
             </div>
             <span
               className="font-serif font-semibold tracking-wide text-lg leading-none transition-colors duration-200"
-              style={{ color: scrolled || pathname !== '/' ? 'var(--color-text-primary)' : '#FAF7F2' }}
+              style={{ color: scrolled || pathname !== '/' ? 'var(--color-text-primary)' : 'var(--color-text-on-dark)' }}
             >
               SUN WORLD TEA
             </span>
@@ -97,10 +97,12 @@ export default function Navbar() {
                 style={{
                   color:
                     pathname === link.href
-                      ? 'var(--color-brand-gold)'
+                      ? scrolled || pathname !== '/'
+                        ? 'var(--color-text-accent)'
+                        : 'var(--color-brand-primary)'
                       : scrolled || pathname !== '/'
                       ? 'var(--color-text-secondary)'
-                      : 'rgba(250, 247, 242, 0.88)',
+                      : 'var(--color-text-on-dark)',
                   // @ts-ignore
                   '--tw-after-bg': 'var(--color-brand-gold)',
                 }}
@@ -127,7 +129,7 @@ export default function Navbar() {
               aria-expanded={mobileOpen}
               className="w-9 h-9 flex items-center justify-center rounded transition-colors duration-200"
               style={{
-                color: scrolled || pathname !== '/' ? 'var(--color-text-primary)' : '#FAF7F2',
+                color: scrolled || pathname !== '/' ? 'var(--color-text-primary)' : 'var(--color-bg-primary)',
               }}
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -142,7 +144,7 @@ export default function Navbar() {
           'fixed inset-0 z-40 lg:hidden transition-all duration-300',
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         )}
-        style={{ background: 'rgba(13, 26, 8, 0.5)', backdropFilter: 'blur(4px)' }}
+        style={{ background: 'rgba(16, 27, 19, 0.5)', backdropFilter: 'blur(4px)' }}
         onClick={() => setMobileOpen(false)}
         aria-hidden="true"
       />
@@ -163,7 +165,7 @@ export default function Navbar() {
               className="w-7 h-7 rounded-full flex items-center justify-center"
               style={{ background: 'linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary))' }}
             >
-              <Leaf size={13} color="#FAF7F2" />
+              <Leaf size={13} color="#14210F" />
             </div>
             <span className="font-serif font-semibold text-base" style={{ color: 'var(--color-text-primary)' }}>
               SUN WORLD TEA
@@ -189,7 +191,7 @@ export default function Navbar() {
                     pathname === link.href ? 'font-semibold' : ''
                   )}
                   style={{
-                    color: pathname === link.href ? 'var(--color-brand-gold)' : 'var(--color-text-secondary)',
+                    color: pathname === link.href ? 'var(--color-text-accent)' : 'var(--color-text-secondary)',
                     background: pathname === link.href ? 'var(--color-bg-secondary)' : 'transparent',
                     borderLeft: pathname === link.href ? '2px solid var(--color-brand-gold)' : '2px solid transparent',
                   }}

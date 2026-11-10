@@ -31,11 +31,11 @@ export default function TeaComparison() {
             <div
               className="hidden sm:grid grid-cols-4 gap-0 px-6 py-4"
               style={{
-                background: 'linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary))',
+                background: 'var(--color-brand-forest)',
               }}
             >
               {['Grade', 'Leaf Style', 'Infusion Speed', 'Typical Character'].map((header) => (
-                <div key={header} className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'rgba(250,247,242,0.9)' }}>
+                <div key={header} className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--color-text-on-dark)' }}>
                   {header}
                 </div>
               ))}
@@ -53,14 +53,14 @@ export default function TeaComparison() {
                 >
                   {/* Desktop Row */}
                   <div
-                    className="hidden sm:grid grid-cols-4 gap-0 px-6 py-5 transition-colors duration-200 group-hover:bg-[rgba(74,124,40,0.04)]"
+                    className="hidden sm:grid grid-cols-4 gap-0 px-6 py-5 transition-colors duration-200 group-hover:bg-[var(--color-bg-card-hover)]"
                     style={{ background: index % 2 === 0 ? 'var(--color-bg-card)' : 'var(--color-bg-secondary)' }}
                   >
                     {/* Grade */}
                     <div className="flex items-center">
                       <span
                         className="inline-block px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded-sm"
-                        style={{ background: 'var(--color-brand-primary)', color: '#FAF7F2' }}
+                        style={{ background: 'var(--color-brand-primary)', color: '#14210F' }}
                       >
                         {row.grade}
                       </span>
@@ -106,7 +106,7 @@ export default function TeaComparison() {
                     <div className="flex items-center justify-between mb-3">
                       <span
                         className="inline-block px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded-sm"
-                        style={{ background: 'var(--color-brand-primary)', color: '#FAF7F2' }}
+                        style={{ background: 'var(--color-brand-primary)', color: '#14210F' }}
                       >
                         {row.grade}
                       </span>

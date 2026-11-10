@@ -23,30 +23,30 @@ export default function TeaCollectionPage() {
       <section
         className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 px-4 sm:px-6 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-secondary) 60%, #1E3B0F 100%)',
+          background: 'var(--color-bg-tertiary)',
         }}
         aria-label="Tea Collection page hero"
       >
-        {/* Background texture */}
+        {/* Abstract leaf shape decoration */}
         <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
+          className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=1200&q=60')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            background: 'var(--color-brand-accent)',
+            opacity: 0.15,
+            transform: 'translate(30%, -20%)',
           }}
           aria-hidden="true"
         />
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: 'linear-gradient(135deg, rgba(13,26,8,0.8) 0%, rgba(21,34,16,0.6) 100%)' }}
+          style={{ background: 'var(--color-bg-veil)' }}
           aria-hidden="true"
         />
 
         {/* Decorative border */}
         <div
           className="absolute inset-x-8 top-20 bottom-0 pointer-events-none hidden lg:block"
-          style={{ borderLeft: '1px solid rgba(201,168,76,0.2)', borderRight: '1px solid rgba(201,168,76,0.2)' }}
+          style={{ borderLeft: '1px solid var(--color-border)', borderRight: '1px solid var(--color-border)' }}
           aria-hidden="true"
         />
 
@@ -54,19 +54,19 @@ export default function TeaCollectionPage() {
           <AnimatedSection>
             <p
               className="text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: 'rgba(201,168,76,0.9)' }}
+              style={{ color: 'var(--color-text-accent)' }}
             >
               Sun World Tea
             </p>
             <h1
               className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-5"
-              style={{ color: '#FAF7F2' }}
+              style={{ color: 'var(--color-text-primary)' }}
             >
               Tea Collection
             </h1>
             <p
               className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-8"
-              style={{ color: 'rgba(250,247,242,0.78)' }}
+              style={{ color: 'var(--color-text-muted)' }}
             >
               A comprehensive guide to our carefully selected Ceylon tea grades — their leaf character, aroma, liquor and brewing notes. Presented for knowledge and appreciation, not commerce.
             </p>

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220" role="img" aria-label="Sun World Tea logo">
+  <title>Sun World Tea — Tea Leaf Logo</title>
+  <desc>A stylised tea leaf and bud forming an elegant, minimal emblem for Sun World Tea.</desc>
+
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#24651D" stroke-width="1.5" opacity="0.85"/>
+  <circle cx="100" cy="100" r="82" fill="none" stroke="#3AB20C" stroke-width="0.75" opacity="0.55"/>
+
+  <!-- Central leaf emblem -->
+  <g>
+    <!-- Main leaf body -->
+    <path d="M100 34
+             C128 54, 134 86, 122 118
+             C114 140, 98 158, 78 162
+             C60 165, 44 156, 36 140
+             C26 118, 28 88, 40 66
+             C50 48, 72 36, 100 34 Z"
+          fill="#24651D"/>
+
+    <!-- Leaf vein (central) -->
+    <path d="M100 38
+             C92 70, 86 104, 84 132
+             C83 144, 84 154, 86 160"
+          fill="none" stroke="#51E30B" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Left lateral vein -->
+    <path d="M96 66
+             C86 72, 76 80, 68 92
+             C62 101, 58 110, 56 120"
+          fill="none" stroke="#75E943" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Right lateral vein -->
+    <path d="M104 66
+             C114 72, 124 80, 132 92
+             C138 101, 142 110, 144 120"
+          fill="none" stroke="#75E943" stroke-width="1.8" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Second, lighter leaf behind for depth -->
+    <path d="M100 44
+             C124 62, 129 90, 119 118
+             C112 138, 99 154, 82 158
+             C67 161, 54 153, 47 139
+             C39 120, 41 94, 51 74
+             C59 59, 78 48, 100 44 Z"
+          fill="none" stroke="#3AB20C" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Tea bud / tip at top -->
+    <path d="M100 30
+             C104 22, 100 16, 96 14
+             C92 12, 88 16, 86 22
+             C84 28, 86 32, 90 34
+             C92 33, 96 32, 100 30 Z"
+          fill="#51E30B"/>
+
+    <!-- Small stem -->
+    <path d="M98 162
+             C96 172, 98 180, 104 184"
+          fill="none" stroke="#51E30B" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="104" cy="184" r="2.4" fill="#51E30B"/>
+  </g>
+
+  <!-- Brand name beneath the emblem -->
+  <g font-family="Georgia, 'Playfair Display', serif" text-anchor="middle">
+    <text x="100" y="208" font-size="13" letter-spacing="5" fill="#194522">SUN WORLD TEA</text>
+  </g>
+</svg>

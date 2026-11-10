@@ -57,7 +57,7 @@ export default function ContactForm() {
       >
         <div
           className="w-16 h-16 rounded-full flex items-center justify-center mb-5"
-          style={{ background: 'rgba(74,124,40,0.1)', color: 'var(--color-brand-secondary)' }}
+          style={{ background: 'var(--color-brand-natural-soft)', color: 'var(--color-text-accent)' }}
         >
           <CheckCircle size={36} />
         </div>
@@ -70,7 +70,7 @@ export default function ContactForm() {
         <button
           onClick={() => setSubmitted(false)}
           className="text-sm font-medium transition-colors duration-200"
-          style={{ color: 'var(--color-brand-secondary)' }}
+          style={{ color: 'var(--color-text-accent)' }}
         >
           Send another message
         </button>
@@ -93,7 +93,7 @@ export default function ContactForm() {
             className="block text-sm font-medium mb-1.5"
             style={{ color: 'var(--color-text-secondary)' }}
           >
-            Full Name <span aria-hidden="true" style={{ color: 'var(--color-brand-secondary)' }}>*</span>
+            Full Name <span aria-hidden="true" style={{ color: 'var(--color-text-accent)' }}>*</span>
           </label>
           <input
             id="contact-name"
@@ -120,7 +120,7 @@ export default function ContactForm() {
             className="block text-sm font-medium mb-1.5"
             style={{ color: 'var(--color-text-secondary)' }}
           >
-            Email Address <span aria-hidden="true" style={{ color: 'var(--color-brand-secondary)' }}>*</span>
+            Email Address <span aria-hidden="true" style={{ color: 'var(--color-text-accent)' }}>*</span>
           </label>
           <input
             id="contact-email"
@@ -168,7 +168,7 @@ export default function ContactForm() {
             className="block text-sm font-medium mb-1.5"
             style={{ color: 'var(--color-text-secondary)' }}
           >
-            Subject <span aria-hidden="true" style={{ color: 'var(--color-brand-secondary)' }}>*</span>
+            Subject <span aria-hidden="true" style={{ color: 'var(--color-text-accent)' }}>*</span>
           </label>
           <select
             id="contact-subject"
@@ -201,7 +201,7 @@ export default function ContactForm() {
           className="block text-sm font-medium mb-1.5"
           style={{ color: 'var(--color-text-secondary)' }}
         >
-          Message <span aria-hidden="true" style={{ color: 'var(--color-brand-secondary)' }}>*</span>
+          Message <span aria-hidden="true" style={{ color: 'var(--color-text-accent)' }}>*</span>
         </label>
         <textarea
           id="contact-message"
@@ -227,7 +227,7 @@ export default function ContactForm() {
         className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-sm font-medium text-sm tracking-wide transition-all duration-250 disabled:opacity-60 disabled:cursor-not-allowed"
         style={{
           background: 'var(--color-brand-primary)',
-          color: '#FAF7F2',
+          color: '#14210F',
         }}
         onMouseEnter={(e) => {
           if (!isSubmitting) {

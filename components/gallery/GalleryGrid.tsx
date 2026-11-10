@@ -27,7 +27,7 @@ export default function GalleryGrid() {
             className="px-4 py-2 rounded-full text-sm font-medium tracking-wide transition-all duration-250"
             style={{
               background: activeCategory === cat.id ? 'var(--color-brand-primary)' : 'var(--color-bg-secondary)',
-              color: activeCategory === cat.id ? '#FAF7F2' : 'var(--color-text-muted)',
+              color: activeCategory === cat.id ? '#14210F' : 'var(--color-text-muted)',
               border: `1px solid ${activeCategory === cat.id ? 'transparent' : 'var(--color-border)'}`,
               transform: activeCategory === cat.id ? 'translateY(-1px)' : '',
               boxShadow: activeCategory === cat.id ? 'var(--shadow-md)' : '',
@@ -76,18 +76,18 @@ export default function GalleryGrid() {
               {/* Hover overlay */}
               <div
                 className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-                style={{ background: 'rgba(13,26,8,0.5)' }}
+                style={{ background: 'rgba(16,27,19,0.5)' }}
                 aria-hidden="true"
               >
                 <div
                   className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-2"
-                  style={{ borderColor: 'rgba(250,247,242,0.8)' }}
+                  style={{ borderColor: 'rgba(234,243,229,0.8)' }}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(250,247,242,0.9)" strokeWidth="2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(234,243,229,0.9)" strokeWidth="2">
                     <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                   </svg>
                 </div>
-                <p className="text-xs font-medium" style={{ color: 'rgba(250,247,242,0.9)' }}>
+                <p className="text-xs font-medium" style={{ color: 'rgba(234,243,229,0.9)' }}>
                   View Full Size
                 </p>
               </div>
@@ -96,8 +96,8 @@ export default function GalleryGrid() {
               <div
                 className="absolute top-2 left-2 px-2 py-0.5 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
-                  background: 'rgba(13,26,8,0.7)',
-                  color: 'rgba(250,247,242,0.9)',
+                  background: 'rgba(16,27,19,0.7)',
+                  color: 'rgba(234,243,229,0.9)',
                   backdropFilter: 'blur(8px)',
                 }}
                 aria-hidden="true"

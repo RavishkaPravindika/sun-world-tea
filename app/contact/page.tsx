@@ -61,24 +61,38 @@ export default function ContactPage() {
       <section
         className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 px-4 sm:px-6 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%)',
+          background: 'var(--color-bg-tertiary)',
         }}
         aria-label="Contact Us page hero"
       >
+        {/* Abstract leaf shape decoration */}
         <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1527481138388-31827a7c94d5?w=1200&q=50')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            background: 'var(--color-brand-accent)',
+            opacity: 0.15,
+            transform: 'translate(30%, -20%)',
           }}
           aria-hidden="true"
         />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'var(--color-bg-veil)' }}
+          aria-hidden="true"
+        />
+
+        {/* Decorative border */}
+        <div
+          className="absolute inset-x-8 top-20 bottom-0 pointer-events-none hidden lg:block"
+          style={{ borderLeft: '1px solid var(--color-border)', borderRight: '1px solid var(--color-border)' }}
+          aria-hidden="true"
+        />
+
         <div className="relative max-w-4xl mx-auto text-center">
           <AnimatedSection>
             <p
               className="text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: 'var(--color-brand-gold)' }}
+              style={{ color: 'var(--color-text-accent)' }}
             >
               Sun World Tea
             </p>
@@ -115,7 +129,7 @@ export default function ContactPage() {
                     <div
                       className="value-icon mb-4"
                     >
-                      <Icon size={18} color="#FAF7F2" />
+                      <Icon size={18} color="#14210F" />
                     </div>
                     <h3
                       className="font-serif text-base font-semibold mb-3"
@@ -130,7 +144,7 @@ export default function ContactPage() {
                             key={j}
                             href={info.link}
                             className="block text-sm transition-colors duration-200"
-                            style={{ color: 'var(--color-brand-secondary)' }}
+                            style={{ color: 'var(--color-text-accent)' }}
                           >
                             {line}
                           </a>
@@ -191,7 +205,7 @@ export default function ContactPage() {
           <AnimatedSection>
             <p
               className="text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ color: 'var(--color-brand-gold)' }}
+              style={{ color: 'var(--color-text-accent)' }}
             >
               Follow Our Journey
             </p>
@@ -215,7 +229,7 @@ export default function ContactPage() {
                   <div className="social-icon">
                     <Icon size={20} />
                   </div>
-                  <span className="text-xs font-medium transition-colors duration-200 group-hover:text-[var(--color-brand-secondary)]" style={{ color: 'var(--color-text-muted)' }}>
+                  <span className="text-xs font-medium transition-colors duration-200 group-hover:text-[var(--color-text-accent)]" style={{ color: 'var(--color-text-muted)' }}>
                     {handle}
                   </span>
                 </a>

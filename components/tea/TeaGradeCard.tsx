@@ -45,7 +45,7 @@ export default function TeaGradeCard({ tea, index }: TeaGradeCardProps) {
             <div className="flex items-center gap-3 mb-2 flex-wrap">
               <span
                 className="inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-sm"
-                style={{ background: 'var(--color-brand-primary)', color: '#FAF7F2' }}
+                style={{ background: 'var(--color-brand-primary)', color: '#14210F' }}
               >
                 {tea.grade}
               </span>
@@ -64,7 +64,7 @@ export default function TeaGradeCard({ tea, index }: TeaGradeCardProps) {
             </h2>
             <p
               className="text-sm font-medium italic mt-1"
-              style={{ color: 'var(--color-brand-gold)' }}
+              style={{ color: 'var(--color-brand-text)' }}
             >
               {tea.tagline}
             </p>
@@ -113,9 +113,9 @@ export default function TeaGradeCard({ tea, index }: TeaGradeCardProps) {
             >
               <div
                 className="shrink-0 w-8 h-8 rounded-sm flex items-center justify-center mt-0.5"
-                style={{ background: 'rgba(74,124,40,0.1)' }}
+                style={{ background: 'var(--color-brand-natural-soft)' }}
               >
-                <Icon size={15} style={{ color: 'var(--color-brand-secondary)' }} />
+                <Icon size={15} style={{ color: 'var(--color-text-accent)' }} />
               </div>
               <div>
                 <p className="text-xs font-semibold mb-1 uppercase tracking-wide" style={{ color: 'var(--color-text-muted)' }}>
@@ -133,7 +133,7 @@ export default function TeaGradeCard({ tea, index }: TeaGradeCardProps) {
         <button
           onClick={() => setExpanded(!expanded)}
           className="flex items-center gap-2 text-sm font-medium transition-colors duration-200 w-full sm:w-auto"
-          style={{ color: 'var(--color-brand-secondary)' }}
+          style={{ color: 'var(--color-text-accent)' }}
           aria-expanded={expanded}
           aria-controls={`brewing-notes-${tea.id}`}
         >
@@ -155,13 +155,13 @@ export default function TeaGradeCard({ tea, index }: TeaGradeCardProps) {
             id={`brewing-notes-${tea.id}`}
             className="mt-4 p-4 rounded-sm"
             style={{
-              background: 'linear-gradient(135deg, rgba(74,124,40,0.06), rgba(201,168,76,0.04))',
+              background: 'linear-gradient(135deg, var(--color-brand-primary-subtle), var(--color-brand-natural-soft))',
               border: '1px solid var(--color-border-gold)',
             }}
             role="region"
             aria-label="Brewing notes"
           >
-            <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: 'var(--color-brand-gold)' }}>
+            <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: 'var(--color-text-accent)' }}>
               Brewing Notes
             </p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text-muted)' }}>

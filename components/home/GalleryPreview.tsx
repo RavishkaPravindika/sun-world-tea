@@ -26,10 +26,10 @@ export default function GalleryPreview() {
             className="group shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-sm text-sm font-medium transition-all duration-250 border self-start sm:self-auto"
             style={{
               borderColor: 'var(--color-border-gold)',
-              color: 'var(--color-brand-gold)',
+              color: 'var(--color-text-accent)',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = 'rgba(201,168,76,0.08)';
+              (e.currentTarget as HTMLElement).style.background = 'var(--color-brand-primary-subtle)';
               (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
             }}
             onMouseLeave={(e) => {
@@ -66,12 +66,12 @@ export default function GalleryPreview() {
                 {/* Hover overlay */}
                 <div
                   className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
-                  style={{ background: 'rgba(13,26,8,0.35)' }}
+                  style={{ background: 'rgba(16,27,19,0.35)' }}
                   aria-hidden="true"
                 >
                   <div
                     className="px-3 py-1.5 rounded-sm text-xs font-medium tracking-wide"
-                    style={{ background: 'var(--color-bg-glass)', color: '#FAF7F2', backdropFilter: 'blur(8px)' }}
+                    style={{ background: 'var(--color-bg-glass)', color: 'var(--color-text-primary)', backdropFilter: 'blur(8px)' }}
                   >
                     View Gallery
                   </div>

@@ -1,74 +1,89 @@
 import { NextResponse } from 'next/server';
-import { googleReviewsData, GoogleReview } from '@/data/reviews';
+import { GoogleReview, ReviewsResponse } from '@/data/reviews';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY || process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID;
 
-  if (apiKey && placeId) {
-    try {
-      // Fetch from Google Places API
-      const res = await fetch(
-        `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,user_ratings_total,reviews&key=${apiKey}`,
-        { next: { revalidate: 1800 } }
-      );
-
-      if (res.ok) {
-        const data = await res.json();
-        if (data.status === 'OK' && data.result?.reviews) {
-          const liveReviews: GoogleReview[] = data.result.reviews.map((r: any, idx: number) => ({
-            id: r.time ? `g-${r.time}` : `g-rev-${idx}`,
-            name: r.author_name,
-            initials: r.author_name
-              ? r.author_name
-                  .split(' ')
-                  .map((w: string) => w[0])
-                  .join('')
-                  .slice(0, 2)
-                  .toUpperCase()
-              : 'G',
-            avatar: r.profile_photo_url,
-            rating: r.rating || 5,
-            text: r.text || '',
-            date: r.relative_time_description || 'Recently',
-            relativeTime: r.relative_time_description || 'Verified Google Review',
-            profileUrl: r.author_url,
-          }));
-
-          return NextResponse.json(
-            {
-              reviews: liveReviews,
-              rating: data.result.rating || 5.0,
-              totalReviews: data.result.user_ratings_total || liveReviews.length,
-              source: 'google_places_api',
-            },
-            {
-              headers: {
-                'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=86400',
-              },
-            }
-          );
-        }
-      }
-    } catch (err) {
-      console.error('Error fetching live Google Reviews from Places API:', err);
-    }
+  if (!apiKey || !placeId) {
+    return NextResponse.json(
+      { error: 'Live Google reviews require GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID to be configured.' },
+      { status: 503 }
+    );
   }
 
-  // Fallback / standard response with verified Google Maps reviews
-  return NextResponse.json(
-    {
-      reviews: googleReviewsData.reviews,
-      rating: googleReviewsData.rating,
-      totalReviews: googleReviewsData.totalReviews,
-      source: 'google_maps_live',
-    },
-    {
+  try {
+    const response = await fetch(`https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}`, {
       headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+        'X-Goog-Api-Key': apiKey,
+        'X-Goog-FieldMask': 'displayName,rating,userRatingCount,reviews',
       },
+      signal: AbortSignal.timeout(10000),
+      next: { revalidate: 1800 },
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => null);
+      console.error('Google Places API returned an HTTP error:', response.status, error?.error?.message ?? '');
+      return NextResponse.json({ error: 'Google reviews are temporarily unavailable.' }, { status: 502 });
     }
-  );
+
+    const data: GooglePlaceDetailsResponse = await response.json();
+    if (!data.displayName?.text) {
+      console.error('Google Places API returned an invalid place response.');
+      return NextResponse.json({ error: 'Google reviews are temporarily unavailable.' }, { status: 502 });
+    }
+
+    const reviews: GoogleReview[] = (data.reviews ?? []).slice(0, 5).map((review, index) => {
+      const name = review.authorAttribution?.displayName || 'Google user';
+      return {
+        id: review.name || `google-review-${index}`,
+        name,
+        initials: name
+          .split(/\s+/)
+          .map((word) => word[0])
+          .join('')
+          .slice(0, 2)
+          .toUpperCase(),
+        avatar: review.authorAttribution?.photoUri,
+        rating: review.rating ?? 0,
+        text: review.text?.text ?? '',
+        date: review.relativePublishTimeDescription ?? review.publishTime ?? '',
+        profileUrl: review.authorAttribution?.uri,
+      };
+    });
+
+    const result: ReviewsResponse = {
+      reviews,
+      rating: data.rating ?? null,
+      totalReviews: data.userRatingCount ?? reviews.length,
+    };
+
+    return NextResponse.json(result, {
+      headers: { 'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=86400' },
+    });
+  } catch (error) {
+    console.error('Failed to fetch Google reviews:', error);
+    return NextResponse.json({ error: 'Google reviews are temporarily unavailable.' }, { status: 502 });
+  }
+}
+
+interface GooglePlaceDetailsResponse {
+  displayName?: { text?: string };
+  rating?: number;
+  userRatingCount?: number;
+  reviews?: Array<{
+    name?: string;
+    rating?: number;
+    text?: { text?: string };
+    publishTime?: string;
+    relativePublishTimeDescription?: string;
+    authorAttribution?: {
+      displayName?: string;
+      uri?: string;
+      photoUri?: string;
+    };
+  }>;
 }

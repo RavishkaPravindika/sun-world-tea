@@ -9,13 +9,13 @@ import { teaGrades } from '@/data/teas';
 const featuredGrades = teaGrades.slice(0, 8);
 
 const gradeColorMap: Record<string, { badge: string; glow: string }> = {
-  amber: { badge: 'rgba(201, 168, 76, 0.15)', glow: 'rgba(201, 168, 76, 0.08)' },
-  orange: { badge: 'rgba(234, 88, 12, 0.12)', glow: 'rgba(234, 88, 12, 0.06)' },
-  red: { badge: 'rgba(185, 28, 28, 0.12)', glow: 'rgba(185, 28, 28, 0.06)' },
-  yellow: { badge: 'rgba(202, 138, 4, 0.12)', glow: 'rgba(202, 138, 4, 0.06)' },
-  green: { badge: 'rgba(74, 124, 40, 0.12)', glow: 'rgba(74, 124, 40, 0.06)' },
-  stone: { badge: 'rgba(78, 70, 58, 0.12)', glow: 'rgba(78, 70, 58, 0.06)' },
-  purple: { badge: 'rgba(88, 28, 135, 0.12)', glow: 'rgba(88, 28, 135, 0.06)' },
+  amber: { badge: 'rgba(81, 227, 11, 0.16)', glow: 'rgba(81, 227, 11, 0.06)' },
+  orange: { badge: 'rgba(117, 233, 67, 0.2)', glow: 'rgba(117, 233, 67, 0.07)' },
+  red: { badge: 'rgba(45, 140, 25, 0.14)', glow: 'rgba(45, 140, 25, 0.05)' },
+  yellow: { badge: 'rgba(160, 237, 125, 0.22)', glow: 'rgba(160, 237, 125, 0.08)' },
+  green: { badge: 'rgba(58, 178, 12, 0.14)', glow: 'rgba(58, 178, 12, 0.06)' },
+  stone: { badge: 'rgba(201, 242, 183, 0.36)', glow: 'rgba(201, 242, 183, 0.12)' },
+  purple: { badge: 'rgba(36, 101, 29, 0.12)', glow: 'rgba(36, 101, 29, 0.04)' },
 };
 
 export default function FeaturedTeas() {
@@ -68,7 +68,7 @@ export default function FeaturedTeas() {
                     <div className="flex items-start justify-between mb-4">
                       <span
                         className="inline-block text-xs font-semibold tracking-widest uppercase px-2.5 py-1 rounded-sm"
-                        style={{ background: colors.badge, color: 'var(--color-brand-gold)' }}
+                        style={{ background: colors.badge, color: 'var(--color-brand-text)' }}
                       >
                         {tea.grade}
                       </span>
@@ -92,7 +92,7 @@ export default function FeaturedTeas() {
                     </h3>
                     <p
                       className="text-xs font-medium tracking-wide italic mb-3"
-                      style={{ color: 'var(--color-brand-gold)' }}
+                      style={{ color: 'var(--color-brand-text)' }}
                     >
                       {tea.tagline}
                     </p>
@@ -129,7 +129,7 @@ export default function FeaturedTeas() {
                     <Link
                       href="/tea-collection"
                       className="group/btn inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-200"
-                      style={{ color: 'var(--color-brand-secondary)' }}
+                      style={{ color: 'var(--color-text-accent)' }}
                       aria-label={`Learn more about ${tea.name}`}
                     >
                       Learn More
@@ -151,7 +151,7 @@ export default function FeaturedTeas() {
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-sm font-medium text-sm tracking-wide transition-all duration-250"
             style={{
               background: 'var(--color-brand-primary)',
-              color: '#FAF7F2',
+              color: '#14210F',
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.background = 'var(--color-brand-secondary)';

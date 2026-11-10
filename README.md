@@ -20,6 +20,10 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Live Google reviews
+
+The homepage loads reviews and ratings from Google Places. Configure `GOOGLE_PLACES_API_KEY` (with Places API access enabled) and `GOOGLE_PLACE_ID` in the server environment. Keep the API key server-side; do not expose it through a `NEXT_PUBLIC_` variable. The reviews section shows an unavailable message until both values are configured rather than displaying sample reviews.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -15,19 +15,19 @@ const values = [
     icon: Award,
     title: 'Quality & Character',
     description:
-      'We believe that exceptional tea should have character â€” a distinct personality in the cup. Quality is not just about grade; it is about the complete experience from leaf to liquor.',
+      'We believe that exceptional tea should have character — a distinct personality in the cup. Quality is not just about grade; it is about the complete experience from leaf to liquor.',
   },
   {
     icon: Sprout,
     title: 'Natural Tea Experience',
     description:
-      'We value tea in its most honest form â€” naturally grown, carefully processed, and presented without unnecessary embellishment. Authenticity is at the heart of what we do.',
+      'We value tea in its most honest form — naturally grown, carefully processed, and presented without unnecessary embellishment. Authenticity is at the heart of what we do.',
   },
   {
     icon: Heart,
     title: 'Passion for Tea',
     description:
-      'Sun World Tea was founded on a genuine love for tea. That passion shapes every decision we make â€” from which teas we stock to how we share tea knowledge with our customers.',
+      'Sun World Tea was founded on a genuine love for tea. That passion shapes every decision we make — from which teas we stock to how we share tea knowledge with our customers.',
   },
   {
     icon: Users,
@@ -54,7 +54,7 @@ export default function WhySunWorldTea() {
       <div
         className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none opacity-30"
         style={{
-          background: 'radial-gradient(circle, rgba(74,124,40,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(81,227,11,0.12) 0%, transparent 70%)',
           transform: 'translate(40%, -20%)',
         }}
         aria-hidden="true"
@@ -107,7 +107,7 @@ export default function WhySunWorldTea() {
                       boxShadow: 'var(--glow-green)',
                     }}
                   >
-                    <Icon size={22} color="#FAF7F2" strokeWidth={1.5} />
+                    <Icon size={22} color="#14210F" strokeWidth={1.5} />
                   </div>
 
                   <h3
@@ -128,4 +128,3 @@ export default function WhySunWorldTea() {
     </section>
   );
 }
-

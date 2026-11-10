@@ -1,6 +1,7 @@
 ﻿'use client'
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -8,19 +9,19 @@ import SectionHeading from '@/components/ui/SectionHeading';
 const knowledgePoints = [
   {
     grade: 'OP',
-    fact: 'Whole-leaf grade â€” larger, wiry leaves that brew into a lighter, more refined and balanced cup.',
+    fact: 'Whole-leaf grade — larger, wiry leaves that brew into a lighter, more refined and balanced cup.',
   },
   {
     grade: 'BOP',
-    fact: 'Broken-leaf grade â€” smaller pieces that brew faster, releasing a stronger, brisk and full-bodied liquor.',
+    fact: 'Broken-leaf grade — smaller pieces that brew faster, releasing a stronger, brisk and full-bodied liquor.',
   },
   {
     grade: 'BOPF',
-    fact: 'Fine fannings â€” very small particles offering the fastest brew and the strongest colour and body.',
+    fact: 'Fine fannings — very small particles offering the fastest brew and the strongest colour and body.',
   },
   {
     grade: 'FBOP',
-    fact: 'Broken leaf with golden tips â€” a grade that balances strength with refined aromatic character.',
+    fact: 'Broken leaf with golden tips — a grade that balances strength with refined aromatic character.',
   },
 ];
 
@@ -53,11 +54,11 @@ export default function TeaKnowledgePreview() {
             <SectionHeading
               eyebrow="Tea Knowledge"
               title="Understanding Tea Grades"
-              subtitle="Not all teas are alike. The grade of a tea â€” from whole-leaf OP to fine BOPF fannings â€” tells you a great deal about what to expect in the cup."
+              subtitle="Not all teas are alike. The grade of a tea — from whole-leaf OP to fine BOPF fannings — tells you a great deal about what to expect in the cup."
             />
 
             <div className="mt-8 space-y-4">
-              {knowledgePoints.map((point, i) => (
+              {knowledgePoints.map((point) => (
                 <div
                   key={point.grade}
                   className="flex items-start gap-4 p-4 rounded-sm transition-all duration-200 hover:-translate-x-1"
@@ -67,7 +68,7 @@ export default function TeaKnowledgePreview() {
                     className="shrink-0 inline-flex items-center justify-center w-11 h-8 text-xs font-bold tracking-widest rounded-sm"
                     style={{
                       background: 'linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary))',
-                      color: '#FAF7F2',
+                      color: '#14210F',
                     }}
                   >
                     {point.grade}
@@ -85,12 +86,12 @@ export default function TeaKnowledgePreview() {
                 className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-sm font-medium text-sm tracking-wide transition-all duration-250"
                 style={{
                   border: '1px solid var(--color-border-gold)',
-                  color: 'var(--color-brand-gold)',
+                  color: 'var(--color-text-accent)',
                   background: 'transparent',
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = 'rgba(201,168,76,0.08)';
-                  (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-brand-gold)';
+                  (e.currentTarget as HTMLElement).style.background = 'var(--color-brand-primary-subtle)';
+                  (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-brand-primary)';
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
                   (e.currentTarget as HTMLElement).style.boxShadow = 'var(--glow-gold)';
                 }}
@@ -115,24 +116,26 @@ export default function TeaKnowledgePreview() {
               <div
                 className="rounded-sm overflow-hidden relative"
                 style={{
-                  background: 'linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-secondary) 100%)',
                   minHeight: '380px',
                 }}
               >
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=700&q=80')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    opacity: 0.4,
-                  }}
-                  role="img"
-                  aria-label="Close-up of premium tea leaves"
+                <Image
+                  src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=1000&auto=format&fit=crop"
+                  alt="Fresh tea leaves"
+                  fill
+                  className="object-cover"
                 />
                 <div
                   className="absolute inset-0"
-                  style={{ background: 'linear-gradient(135deg, rgba(13,26,8,0.7) 0%, rgba(21,34,16,0.5) 100%)' }}
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(25,69,34,0.3), transparent)',
+                  }}
+                  role="img"
+                  aria-label="Tea leaf gradient backdrop"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: 'linear-gradient(135deg, rgba(16,27,19,0.7) 0%, rgba(24,41,27,0.5) 100%)' }}
                   aria-hidden="true"
                 />
 
@@ -140,17 +143,17 @@ export default function TeaKnowledgePreview() {
                   <div className="mt-auto">
                     <p
                       className="text-xs font-semibold tracking-widest uppercase mb-2"
-                      style={{ color: 'var(--color-brand-gold)' }}
+                      style={{ color: 'var(--color-brand-primary)' }}
                     >
                       Did You Know
                     </p>
                     <p
                       className="font-serif text-xl sm:text-2xl font-medium leading-snug mb-4"
-                      style={{ color: '#FAF7F2' }}
+                      style={{ color: 'var(--color-text-on-dark)' }}
                     >
-                      "Orange Pekoe" has nothing to do with orange flavour.
+                      &quot;Orange Pekoe&quot; has nothing to do with orange flavour.
                     </p>
-                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(250,247,242,0.75)' }}>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(234,243,229,0.82)' }}>
                       It is a traditional tea-grade classification believed to derive from the Dutch Royal House of Orange-Nassau and the historical tea trade.
                     </p>
                   </div>
@@ -166,7 +169,7 @@ export default function TeaKnowledgePreview() {
                   border: '1px solid var(--color-border-gold)',
                 }}
               >
-                <p className="text-2xl font-serif font-bold" style={{ color: 'var(--color-brand-gold)' }}>8+</p>
+                <p className="text-2xl font-serif font-bold" style={{ color: 'var(--color-text-accent)' }}>8+</p>
                 <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>Tea Varieties</p>
               </div>
 
@@ -178,7 +181,7 @@ export default function TeaKnowledgePreview() {
                   border: '1px solid var(--color-border)',
                 }}
               >
-                <p className="text-2xl font-serif font-bold" style={{ color: 'var(--color-brand-secondary)' }}>100%</p>
+                <p className="text-2xl font-serif font-bold" style={{ color: 'var(--color-text-accent)' }}>100%</p>
                 <p className="text-xs mt-0.5" style={{ color: 'var(--color-text-muted)' }}>Ceylon Origin</p>
               </div>
             </div>
@@ -188,4 +191,3 @@ export default function TeaKnowledgePreview() {
     </section>
   );
 }
-

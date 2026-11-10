@@ -45,7 +45,7 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                 style={{ background: 'linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary))' }}
               >
-                <Leaf size={17} color="#FAF7F2" />
+                <Leaf size={17} color="#14210F" />
               </div>
               <span className="font-serif font-semibold text-lg" style={{ color: 'var(--color-text-primary)' }}>
                 SUN WORLD TEA
@@ -72,8 +72,8 @@ export default function Footer() {
                     background: 'var(--color-bg-card)',
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-brand-gold)';
-                    (e.currentTarget as HTMLElement).style.color = 'var(--color-brand-gold)';
+                    (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-brand-primary)';
+                    (e.currentTarget as HTMLElement).style.color = 'var(--color-text-accent)';
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-border)';
@@ -104,10 +104,10 @@ export default function Footer() {
                     href={link.href}
                     className="text-sm transition-colors duration-200 flex items-center gap-1.5 group"
                     style={{ color: 'var(--color-text-muted)' }}
-                    onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-brand-secondary)'}
+                    onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-text-accent)'}
                     onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-text-muted)'}
                   >
-                    <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-xs" style={{ color: 'var(--color-brand-gold)' }}>›</span>
+                    <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200 text-xs" style={{ color: 'var(--color-brand-primary)' }}>›</span>
                     {link.label}
                   </Link>
                 </li>
@@ -130,7 +130,7 @@ export default function Footer() {
                     href="/tea-collection"
                     className="text-sm transition-colors duration-200"
                     style={{ color: 'var(--color-text-muted)' }}
-                    onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-brand-secondary)'}
+                    onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-text-accent)'}
                     onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-text-muted)'}
                   >
                     {grade}
@@ -150,7 +150,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4" role="list">
               <li className="flex items-start gap-3">
-                <MapPin size={15} className="mt-0.5 shrink-0" style={{ color: 'var(--color-brand-gold)' }} />
+                <MapPin size={15} className="mt-0.5 shrink-0" style={{ color: 'var(--color-brand-primary)' }} />
                 <span className="text-sm" style={{ color: 'var(--color-text-muted)' }}>
                   Sun World Tea<br />
                   [Address to be confirmed]<br />
@@ -158,24 +158,24 @@ export default function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={15} className="shrink-0" style={{ color: 'var(--color-brand-gold)' }} />
+                <Phone size={15} className="shrink-0" style={{ color: 'var(--color-brand-primary)' }} />
                 <a
                   href="tel:+94000000000"
                   className="text-sm transition-colors duration-200"
                   style={{ color: 'var(--color-text-muted)' }}
-                  onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-brand-secondary)'}
+                  onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-text-accent)'}
                   onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-text-muted)'}
                 >
                   +94 (0) 00 000 0000
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={15} className="shrink-0" style={{ color: 'var(--color-brand-gold)' }} />
+                <Mail size={15} className="shrink-0" style={{ color: 'var(--color-brand-primary)' }} />
                 <a
                   href="mailto:info@sunworldtea.com"
                   className="text-sm transition-colors duration-200"
                   style={{ color: 'var(--color-text-muted)' }}
-                  onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-brand-secondary)'}
+                  onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-text-accent)'}
                   onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = 'var(--color-text-muted)'}
                 >
                   info@sunworldtea.com
@@ -187,7 +187,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 mt-5 text-xs font-medium tracking-wide transition-colors duration-200"
-              style={{ color: 'var(--color-brand-gold)' }}
+              style={{ color: 'var(--color-text-accent)' }}
             >
               Open in Google Maps <ExternalLink size={12} />
             </a>
@@ -206,7 +206,7 @@ export default function Footer() {
           <div className="flex items-center gap-5">
             <span
               className="text-xs tracking-widest font-medium"
-              style={{ color: 'var(--color-brand-gold)', opacity: 0.8 }}
+              style={{ color: 'var(--color-brand-primary)', opacity: 0.9 }}
             >
               THE ART OF EXCEPTIONAL TEA
             </span>

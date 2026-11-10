@@ -28,12 +28,12 @@ export default function ThemeToggle() {
       style={{
         borderColor: 'var(--color-border-gold)',
         background: 'var(--color-bg-secondary)',
-        color: 'var(--color-brand-gold)',
+        color: 'var(--color-text-accent)',
       }}
     >
       <span
         className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{ background: 'rgba(201, 168, 76, 0.08)' }}
+        style={{ background: 'var(--color-brand-primary-subtle)' }}
       />
       {theme === 'dark' ? (
         <Sun size={16} className="relative z-10" />

@@ -45,7 +45,7 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
       {/* Backdrop */}
       <div
         className="absolute inset-0 cursor-pointer"
-        style={{ background: 'rgba(5, 12, 3, 0.95)', backdropFilter: 'blur(8px)' }}
+        style={{ background: 'rgba(16, 27, 19, 0.95)', backdropFilter: 'blur(8px)' }}
         onClick={onClose}
         aria-hidden="true"
       />
@@ -55,9 +55,9 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
         onClick={onClose}
         className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
         style={{
-          background: 'rgba(250,247,242,0.1)',
-          color: 'rgba(250,247,242,0.9)',
-          border: '1px solid rgba(250,247,242,0.15)',
+          background: 'rgba(234,243,229,0.1)',
+          color: 'rgba(234,243,229,0.9)',
+          border: '1px solid rgba(234,243,229,0.15)',
         }}
         aria-label="Close image viewer"
       >
@@ -67,7 +67,7 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
       {/* Counter */}
       <div
         className="absolute top-5 left-1/2 -translate-x-1/2 text-sm font-medium"
-        style={{ color: 'rgba(250,247,242,0.6)' }}
+        style={{ color: 'rgba(234,243,229,0.6)' }}
         aria-live="polite"
       >
         {currentIndex + 1} / {images.length}
@@ -78,9 +78,9 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
         onClick={() => hasPrev && onNavigate(currentIndex - 1)}
         className="absolute left-2 sm:left-6 z-10 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 disabled:opacity-30"
         style={{
-          background: 'rgba(250,247,242,0.1)',
-          color: 'rgba(250,247,242,0.9)',
-          border: '1px solid rgba(250,247,242,0.15)',
+          background: 'rgba(234,243,229,0.1)',
+          color: 'rgba(234,243,229,0.9)',
+          border: '1px solid rgba(234,243,229,0.15)',
         }}
         disabled={!hasPrev}
         aria-label="Previous image"
@@ -93,9 +93,9 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
         onClick={() => hasNext && onNavigate(currentIndex + 1)}
         className="absolute right-2 sm:right-6 z-10 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200 disabled:opacity-30"
         style={{
-          background: 'rgba(250,247,242,0.1)',
-          color: 'rgba(250,247,242,0.9)',
-          border: '1px solid rgba(250,247,242,0.15)',
+          background: 'rgba(234,243,229,0.1)',
+          color: 'rgba(234,243,229,0.9)',
+          border: '1px solid rgba(234,243,229,0.15)',
         }}
         disabled={!hasNext}
         aria-label="Next image"
@@ -127,7 +127,7 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
         {/* Caption */}
         <p
           className="mt-4 text-sm text-center max-w-md leading-relaxed"
-          style={{ color: 'rgba(250,247,242,0.65)' }}
+          style={{ color: 'rgba(234,243,229,0.65)' }}
         >
           {current.alt}
         </p>
@@ -143,7 +143,7 @@ export default function Lightbox({ images, currentIndex, onClose, onNavigate }: 
             style={{
               width: i === currentIndex ? '20px' : '6px',
               height: '6px',
-              background: i === currentIndex ? 'var(--color-brand-gold)' : 'rgba(250,247,242,0.3)',
+              background: i === currentIndex ? 'var(--color-brand-primary)' : 'rgba(234,243,229,0.3)',
             }}
             tabIndex={-1}
           />

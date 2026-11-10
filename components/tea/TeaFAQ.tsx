@@ -31,14 +31,14 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
         aria-controls={id}
         id={`${id}-button`}
         style={{
-          background: open ? 'rgba(74,124,40,0.03)' : 'transparent',
+          background: open ? 'var(--color-brand-primary-subtle)' : 'transparent',
         }}
       >
         <div className="flex items-start gap-3">
           <HelpCircle
             size={17}
             className="shrink-0 mt-0.5"
-            style={{ color: open ? 'var(--color-brand-gold)' : 'var(--color-brand-secondary)' }}
+            style={{ color: open ? 'var(--color-brand-primary)' : 'var(--color-text-accent)' }}
           />
           <span
             className="font-medium text-sm sm:text-base leading-snug"
@@ -51,7 +51,7 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
           className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-200"
           style={{
             background: open ? 'var(--color-brand-gold)' : 'var(--color-bg-secondary)',
-            color: open ? '#FAF7F2' : 'var(--color-text-muted)',
+            color: open ? '#14210F' : 'var(--color-text-muted)',
           }}
           aria-hidden="true"
         >
