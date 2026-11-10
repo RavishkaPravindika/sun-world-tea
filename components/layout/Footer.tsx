@@ -212,12 +212,53 @@ export default function Footer() {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <Link
+            {/* <Link
               href="/contact"
               className="transition-colors duration-200 hover:underline"
               style={{ color: 'var(--color-text-muted)' }}
             >
               Privacy Policy
+            </Link> */}
+            <Link href="https://ravishka.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <div className="flex items-center gap-2">
+                Designed & Developed by
+                <div className='top-0 left-0 w-10 h-10 flex items-center justify-center text-white font-bold text-xl transition-all duration-300'>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 500 500" 
+                  >
+                    <defs>
+                      {/* Defining the Cyan to Purple Gradient */}
+                      <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#00D4FF" />   {/* accent-cyan */}
+                        <stop offset="100%" stopColor="#A855F7" /> {/* accent-purple */}
+                      </linearGradient>
+                    </defs>
+
+                    {/* Scaled-down 'R' Logo Mark (Now at 70% size and perfectly centered) */}
+                    <g transform="translate(75, 60) scale(0.70)">
+                      <path 
+                        fill="url(#brandGradient)" 
+                        d="M 70 50 L 250 50 A 150 150 0 0 1 340 320 L 430 420 L 364 420 L 220 260 L 220 340 L 170 340 L 170 150 L 336.6 150 A 100 100 0 0 0 250 100 L 120 100 L 120 420 L 70 420 Z M 220 200 L 220 260 L 257 301 A 100 100 0 0 0 350 200 Z" 
+                      />
+                    </g>
+
+                    {/* Highly Prominent and Bolder Text, Centered Below */}
+                    <text 
+                      x="250" 
+                      y="470" 
+                      textAnchor="middle" 
+                      fontFamily="system-ui, -apple-system, sans-serif" 
+                      fontSize="80" 
+                      fontWeight="950" 
+                      letterSpacing="10" 
+                      fill="url(#brandGradient)"
+                    >
+                      RAVISHKA
+                    </text>
+                  </svg>
+                </div>
+              </div>
             </Link>
           </div>
         </div>
